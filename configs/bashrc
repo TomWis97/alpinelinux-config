@@ -1,0 +1,31 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# Add to path
+homebin="$HOME/.local/bin"
+case ":$PATH:" in
+  *":$homebin:"*) :;; # already there
+  *) PATH="$homebin:$PATH";; # or PATH="$PATH:$homebin"
+esac
+
+# User specific aliases and functions
+alias vi=vim
+alias l="ls -lah"
+alias c="clear"
+alias t="tmux"
+alias 'cleandocker'='docker stop `docker ps -q`; docker container rm `docker ps -aq`; docker image rm `docker image ls -q`'
+alias cleanssh='rm ~/.ssh/known_hosts'
+
+# TheFuck
+eval $(thefuck --alias)
+
+# Sudoedit editor
+export SUDO_EDITOR=vim
+
+# For i3
+export TERMINAL=terminator
+export EDITOR=vim
