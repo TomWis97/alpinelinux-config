@@ -15,3 +15,4 @@ pip3 install --user git+https://github.com/powerline/powerline
 ln -s ~/alpinelinux-config/configs/bashrc ~/.bashrc
 ln -s ~/alpinelinux-config/configs/tmux.conf ~/.tmux.conf
 ln -s ~/alpinelinux-config/configs/vimrc ~/.vimrc
+echo 'source ~/.bashrc' > ~/.bash_profile
