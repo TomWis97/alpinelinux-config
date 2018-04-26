@@ -20,8 +20,16 @@ alias t="tmux"
 alias 'cleandocker'='docker stop `docker ps -q`; docker container rm `docker ps -aq`; docker image rm `docker image ls -q`'
 alias cleanssh='rm ~/.ssh/known_hosts'
 
-# TheFuck
-eval $(thefuck --alias)
+function exitcode {
+        code=$?
+        if [[ $code != 0 ]]
+        then
+                echo -n "[$code]"
+        fi
+}
+
+# Commandline
+export PS1="\u@\h:\w\$(exitcode)\$ \[$(tput sgr0)\]"
 
 # Sudoedit editor
 export SUDO_EDITOR=vim
