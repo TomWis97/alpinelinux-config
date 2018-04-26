@@ -15,7 +15,7 @@ fi
 set -xe
 apk update
 apk upgrade
-apk add bash bash-doc bash-completion python3 git vim tmux
+apk add bash bash-doc bash-completion python3 git vim tmux ncurses
 pip3 install --upgrade pip
 adduser -s /bin/bash $username
 userscript="/home/$username/user_setup.sh"
