@@ -10,7 +10,7 @@ set -xe
 apk add bash bash-doc bash-completion python3 git vim tmux
 pip3 install --upgrade pip
 adduser -s /bin/bash $username
-userscript="~$username/user_setup.sh"
+userscript="/home/$username/user_setup.sh"
 cp ~/alpinelinux-config/user_setup.sh "$userscript"
 chown $username $userscript
 chmod 550 $userscript
